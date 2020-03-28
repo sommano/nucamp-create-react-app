@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
+
 function RenderCard({item}) {
     return (
         <Card>
@@ -10,8 +11,9 @@ function RenderCard({item}) {
                 <CardText>{item.description}</CardText>
             </CardBody>
         </Card>
-    );
+    )
 }
+
 
 function Home(props) {
     return (
@@ -31,4 +33,4 @@ function Home(props) {
     );
 }
 
-export default Home;   
+export default Home;

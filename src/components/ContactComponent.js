@@ -12,6 +12,7 @@ function Contact(props) {
                         <BreadcrumbItem active>Contact Us</BreadcrumbItem>
                     </Breadcrumb>
                     <h2>Contact Us</h2>
+                    <hr />
                 </div>
             </div>
 
