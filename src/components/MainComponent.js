@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Directory from './DirectoryComponent';
 import CampsiteInfo from './CampsiteInfoComponent';
 import Header from './HeaderComponent';
-import Contact from './ContactComponent';
 import Home from './HomeComponent';
+import Contact from './ContactComponent';
 import Footer from './FooterComponent';
 import About from './AboutComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
@@ -24,6 +24,7 @@ class Main extends Component {
     }
 
     render() {
+
         const HomePage = () => {
             return (
                 <Home 
@@ -40,7 +41,6 @@ class Main extends Component {
                     campsite={this.state.campsites.filter(campsite => campsite.id === +match.params.campsiteId)[0]}
                     comments={this.state.comments.filter(comment => comment.campsiteId === +match.params.campsiteId)} />
             );
-
         }
 
         return (
@@ -48,7 +48,7 @@ class Main extends Component {
                 <Header />
                 <Switch>
                     <Route path='/home' component={HomePage} />
-                    <Route path='/directory/:campsiteId' component={CampsiteWithId} />
+                    <Route path='/directory/:campsiteId' component={CampsiteWithId} />                    
                     <Route exact path='/contactus' component={Contact} />
                     <Route exact path='/directory' render={() => <Directory campsites={this.state.campsites} />} />
                     <Route exact path='/aboutus' render={() => <About partners ={this.state.partners} /> } />

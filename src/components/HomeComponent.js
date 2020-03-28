@@ -3,6 +3,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 
 function RenderCard({item}) {
+    
     return (
         <Card>
             <CardImg src={item.image} alt={item.name} />
@@ -13,7 +14,6 @@ function RenderCard({item}) {
         </Card>
     )
 }
-
 
 function Home(props) {
     return (
@@ -33,4 +33,4 @@ function Home(props) {
     );
 }
 
-export default Home;
+export default Home;   
