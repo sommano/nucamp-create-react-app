@@ -100,7 +100,7 @@ function RenderCampsite({campsite}) {
     )
 }
 
-function RenderComments({comments, addComment, campsiteId}) {
+function RenderComments({comments, postComment, campsiteId}) {
     if (comments) {
         return (
             <div className="col-md-5 m-1">
@@ -114,7 +114,7 @@ function RenderComments({comments, addComment, campsiteId}) {
                     )
                     })
                 }
-                <CommentForm campsiteId={campsiteId} addComment={addComment} />
+                <CommentForm campsiteId={campsiteId} postComment={postComment} />
             </div>
         );
     }
@@ -161,6 +161,8 @@ function CampsiteInfo(props) {
                             comments={props.comments}
                             addComment={props.addComment}
                             campsiteId={props.campsite.id}
+                            postComment={props.postComment}                   
+
                         />
                 </div>
             </div>

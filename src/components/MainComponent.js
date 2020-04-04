@@ -15,9 +15,11 @@ import { PROMOTIONS } from '../shared/promotions';
 import About from './AboutComponent';
 import { addComment, fetchCampsites, fetchComments, fetchPromotions } from '../redux/ActionCreators';
 import { actions } from 'react-redux-form';
+import { postComment, fetchCampsites, fetchComments, fetchPromotions } from '../redux/ActionCreators';
 
 
 const mapDispatchToProps = {
+    postComment: (campsiteId, rating, author, text) => (postComment(campsiteId, rating, author, text)),
     addComment: (campsiteId, rating, author, text) => (addComment(campsiteId, rating, author, text)),
     fetchCampsites: () => (fetchCampsites()),
     resetFeedbackForm: () => (actions.reset('feedbackForm')),
@@ -76,6 +78,8 @@ class Main extends Component {
                     comments={this.props.comments.comments.filter(comment => comment.campsiteId === +match.params.campsiteId)}
                     commentsErrMess={this.props.comments.errMess}
                     addComment={this.props.addComment}
+                    postComment={this.props.postComment}
+
                 />   
             );
         };
