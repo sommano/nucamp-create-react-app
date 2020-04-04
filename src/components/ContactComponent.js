@@ -41,8 +41,6 @@ class Contact extends Component {
         alert('Current state is: ' + JSON.stringify(values));
     }
     render() {
-
-
         return (
             <div className="container" >
                 <div className="row">
